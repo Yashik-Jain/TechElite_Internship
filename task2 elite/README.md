@@ -25,7 +25,7 @@ This project is a simple implementation of a **Speech-to-Text system** using the
 speech_to_text/<br/>
 │<br/>
 ├── app.py # Main Python script<br/>
-├── sample.wav # Example audio file (add your own)<br/>
+├── sample.wav # Example audio file<br/>
 ├── requirements.txt # Python dependencies<br/>
 └── README.md # Project documentation<br/>
 
