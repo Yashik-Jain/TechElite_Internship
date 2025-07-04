@@ -129,3 +129,9 @@ plt.imshow(im_convert(target))
 plt.title("Stylized Image")
 plt.axis("off")
 plt.show()
+
+# Save the stylized image as final.jpg
+final_image = im_convert(target)
+final_image.save("final.jpg")
+print("Stylized image saved as final.jpg")
+
