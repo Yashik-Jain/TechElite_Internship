@@ -15,5 +15,5 @@ def transcribe_audio(file_path):
             print("Could not request results:", e)
 
 # Example usage
-transcribe_audio(r"C:\Users\yashi\Downloads\tech elite task2\speech_env\recordedaudio.wav")
+transcribe_audio(r"path to audio file")
 
