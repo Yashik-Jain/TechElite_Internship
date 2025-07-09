@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #e65807;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: rgb(217, 214, 15);
+      
+    }
+    #prompt{
+        color: #000000;
+        font-size: 20px;
+    }
+    button{
+        border: 2px;
+        background-color: #e0e018;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: sans-serif;
+        font-weight: bolder;
+    }
+    #output {
+      margin-top: 20px;
+      background: #ab3d3d;
+      padding: 15px;
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <h2>AI Text Generator</h2>
+  <textarea id="prompt" rows="4" placeholder="Enter your topic or prompt..."></textarea>
+  <button onclick="generateText()">Generate Text</button>
+  <div id="output"></div>
+
+  <script>
+    async function generateText() {
+      const prompt = document.getElementById('prompt').value;
+      const response = await fetch('/generate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({prompt})
+      });
+      const data = await response.json();
+      document.getElementById('output').innerText = data.generated_text;
+    }
+  </script>
+</body>
+</html>
